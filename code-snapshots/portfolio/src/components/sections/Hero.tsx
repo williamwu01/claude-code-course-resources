@@ -35,7 +35,7 @@ export default function Hero() {
           transition={{ duration: 1, delay: 0.6 }}
           className="font-display text-7xl md:text-9xl lg:text-[12rem] leading-none tracking-tight"
         >
-          William <span className="text-gradient italic">Wu</span>
+          William <span className="text-gradient italic mx-2">Wu</span>
         </motion.h1>
         <motion.p
           initial={{ opacity: 0 }}

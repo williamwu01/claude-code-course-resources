@@ -100,3 +100,11 @@ body {
 .animate-blob {
   animation: blob 15s ease-in-out infinite;
 }
+
+@layer components {
+  .italic {
+    padding: 0 0.1em;
+    overflow: visible;
+    letter-spacing: 0.02em;
+  }
+}

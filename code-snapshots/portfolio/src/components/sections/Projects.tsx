@@ -64,7 +64,7 @@ export default function Projects() {
   const x = useTransform(
     scrollYProgress,
     [0, 1],
-    ["0%", `-${(projects.length - 1) * 100}vw`],
+    ["0%", `-${(projects.length - 1) * 50}vw`],
   );
   const xClamped = useTransform(x, (v) => {
     const max = -(projects.length - 1) * (typeof window !== "undefined" ? window.innerWidth - 480 : 0);

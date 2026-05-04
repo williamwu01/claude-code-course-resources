@@ -64,21 +64,6 @@ function generateTorus(count: number, size: number) {
   }
   return pts;
 }
-function generateGalaxy(count: number, size: number) {
-  const pts = new Float32Array(count * 3);
-  const arms = 4, armWidth = 0.6;
-  for (let i = 0; i < count; i++) {
-    const t = Math.pow(Math.random(), 1.5);
-    const radius = t * size;
-    const armIndex = Math.floor(Math.random() * arms);
-    const angle = (armIndex / arms) * Math.PI * 2 + (radius / size) * 6;
-    const spread = (Math.random() - 0.5) * armWidth * (1 - radius / size);
-    pts[i * 3]     = radius * Math.cos(angle + spread);
-    pts[i * 3 + 1] = (Math.random() - 0.5) * size * 0.1 * (1 - t * 0.3);
-    pts[i * 3 + 2] = radius * Math.sin(angle + spread);
-  }
-  return pts;
-}
 function generateWave(count: number, size: number) {
   const pts = new Float32Array(count * 3);
   for (let i = 0; i < count; i++) {
@@ -101,13 +86,37 @@ function generateCube(count: number, size: number) {
   }
   return pts;
 }
+function generateOctahedron(count: number, size: number) {
+  const pts = new Float32Array(count * 3);
+  const vertices = [
+    [1, 0, 0], [-1, 0, 0],
+    [0, 1, 0], [0, -1, 0],
+    [0, 0, 1], [0, 0, -1]
+  ];
+  for (let i = 0; i < count; i++) {
+    const face = Math.floor(Math.random() * 8);
+    let v1 = vertices[Math.floor(Math.random() * 6)];
+    let v2 = vertices[Math.floor(Math.random() * 6)];
+    let v3 = vertices[Math.floor(Math.random() * 6)];
+    
+    const t1 = Math.random();
+    const t2 = Math.random();
+    const t3 = Math.random();
+    const sum = t1 + t2 + t3;
+    
+    pts[i * 3]     = (v1[0] * t1 + v2[0] * t2 + v3[0] * t3) / sum * size;
+    pts[i * 3 + 1] = (v1[1] * t1 + v2[1] * t2 + v3[1] * t3) / sum * size;
+    pts[i * 3 + 2] = (v1[2] * t1 + v2[2] * t2 + v3[2] * t3) / sum * size;
+  }
+  return pts;
+}
 
 const SHAPES = [
   { name: "Sphere",  gen: generateSphere },
   { name: "Torus",   gen: generateTorus },
-  { name: "Galaxy",  gen: generateGalaxy },
   { name: "Wave",    gen: generateWave },
   { name: "Cube",    gen: generateCube },
+  { name: "Octahedron", gen: generateOctahedron },
 ];
 
 function createCircleTexture() {
@@ -347,7 +356,7 @@ export default function HeroScene({ onShapeChange }: { onShapeChange?: (name: st
     }
 
     // auto-morph every 6 seconds
-    const autoMorphTimer = setInterval(triggerMorph, 6000);
+    const autoMorphTimer = setInterval(triggerMorph, 16000);
     // click to morph
     mount.addEventListener("click", triggerMorph);
 
