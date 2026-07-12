@@ -101,6 +101,16 @@ body {
   animation: blob 15s ease-in-out infinite;
 }
 
+@keyframes spin-gradient {
+  to { transform: rotate(360deg); }
+}
+
+@layer utilities {
+  .animate-spin-gradient {
+    animation: spin-gradient 4s linear infinite;
+  }
+}
+
 @layer components {
   .italic {
     padding: 0 0.1em;
