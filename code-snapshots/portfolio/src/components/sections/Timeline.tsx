@@ -13,44 +13,44 @@ type TimelineItem = {
 
 const items: TimelineItem[] = [
   {
-    year: "2025",
-    title: "Senior Frontend Engineer",
-    org: "Acme Studio",
+    year: "Mar 2026 - Present",
+    title: "Configuration Analyst",
+    org: "Forward Insurance Managers Ltd.",
     type: "work",
     description:
-      "Leading the frontend platform for a creative studio. Building motion-rich product surfaces with Next.js and WebGL.",
+      "Configuring insurance products in an enterprise platform: building form interfaces, complex custom calculations for premiums and liabilities, and testing REST API endpoints. Developed internal JavaScript tools to streamline configuration workflows.",
   },
   {
-    year: "2023",
+    year: "May 2025 - Mar 2026",
+    title: "Project Manager | Lead Developer",
+    org: "PulseHire AI",
+    type: "work",
+    description:
+      "Led development of an AI interviewing job board built with Next.js, including a full admin dashboard and API integrations. Set up GA4/GTM analytics, boosted SEO, and managed workflow with Kanban boards and Gantt charts.",
+  },
+  {
+    year: "May 2024 - Mar 2026",
+    title: "Web Developer | UI/UX Designer",
+    org: "Vancouver WebTeck",
+    type: "work",
+    description:
+      "Developed responsive client websites end to end with React, Next.js, PHP, WordPress, and Shopify. Designed wireframes, prototypes, and site maps in Figma.",
+  },
+  {
+    year: "Sep 2024 - May 2025",
     title: "Frontend Engineer",
-    org: "Beacon Labs",
+    org: "Let's Pair Education",
     type: "work",
     description:
-      "Shipped a real-time collaborative canvas, end-to-end TypeScript, design system from zero to ten teams.",
+      "Built the matching algorithm in TypeScript, scalable data models with Prisma and PostgreSQL, and a cookie-based auth system in Next.js. Designed a responsive, user-friendly UI with Tailwind CSS.",
   },
   {
-    year: "2022",
-    title: "B.S. Computer Science",
-    org: "University of Toronto",
-    type: "education",
-    description:
-      "Specialization in HCI and graphics. Thesis on interactive procedural visualizations.",
-  },
-  {
-    year: "2021",
-    title: "Junior Web Developer",
-    org: "Ribbon Co.",
+    year: "Jun 2024 - Sep 2024",
+    title: "WordPress Developer",
+    org: "Henesys Digital",
     type: "work",
     description:
-      "First role. Wrote the first internal component library and learned what a good PR looks like.",
-  },
-  {
-    year: "2018",
-    title: "Started Coding",
-    org: "Self-taught",
-    type: "education",
-    description:
-      "Built terrible Geocities-tier websites. Got hooked on the web and never looked back.",
+      "Created custom shortcodes for contact info, banners, buttons, and card components. Optimized media and removed unused scripts and stylesheets to improve page speed.",
   },
 ];
 
